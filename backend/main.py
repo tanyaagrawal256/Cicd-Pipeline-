@@ -11,7 +11,7 @@ app = FastAPI(title="Linear Regression API")
 # MODEL_PATH = Path(os.getenv("MODEL_PATH", "model/model.pkl"))
 
 # MODEL_PATH = "/Users/tanyaagrawal/Downloads/mlops_pipeline/backened/model/model.pkl"
-MODEL_PATH = Path(os.getenv("MODEL_PATH", "models/model.pkl"))
+MODEL_PATH = Path(os.getenv("MODEL_PATH", "model/model.pkl"))
 
 
 try:
