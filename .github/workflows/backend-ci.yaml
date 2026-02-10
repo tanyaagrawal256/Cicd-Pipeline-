@@ -30,12 +30,12 @@ jobs:
          python -m pytest tests/
 
  deploy:
-    needs: test    # <- only runs if test job succeds
+    needs: test   # runs only if test job succeeds
     runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/main'       # optional extra safety
+    if: github.ref == 'refs/heads/main'
+
     steps:
       - name: Trigger Render Deploy
         run: |
           curl -X POST "${{ secrets.RENDER_DEPLOY_HOOK }}"
-
     
