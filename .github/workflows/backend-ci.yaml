@@ -29,7 +29,7 @@ jobs:
          python -m pip install pytest httpx
          python -m pytest tests/
 
-   deploy:
+ deploy:
     needs: test    # <- only runs if test job succeds
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/main'       # optional extra safety
