@@ -21,7 +21,7 @@ jobs:
 
      - name: Run checks
        working-directory: backend
-       run: python -c "Import main"
+       run: python -c "import main"
 
      - name: Run backend tests
        working-directory: backend
