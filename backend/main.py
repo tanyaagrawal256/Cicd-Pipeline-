@@ -4,6 +4,7 @@ import pickle
 from pathlib import Path
 import numpy as np
 import os
+from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI(title="Linear Regression API")
 
@@ -12,6 +13,14 @@ app = FastAPI(title="Linear Regression API")
 
 # MODEL_PATH = "/Users/tanyaagrawal/Downloads/mlops_pipeline/backened/model/model.pkl"
 MODEL_PATH = Path(os.getenv("MODEL_PATH", "model/model.pkl"))
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["https://cicd-pipeline-1-bull.onrender.com"], 
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 
 try:
